@@ -1,0 +1,157 @@
+@font-face {
+    font-family: 'Cuprum-Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Cuprum-Regular'), url('../assets/fonts/Cuprum-Regular.ttf') format('truetype');
+}
+
+
+
+html,
+body {
+  background-color: #121212;
+  font-size: 14px;
+  font-family: Cuprum-Regular;
+  color: #ffffff;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.avatar {
+  border: solid 2px #01504e;
+  border-radius: 50%;
+  height: 35px;
+  width: 35px;
+}
+
+
+.bold {
+  font-weight: bold;
+}
+
+.bg-marrs-green {
+  background-color: #01837F;
+}
+
+.bg-night {
+  background-color: #121212;
+}
+
+.container {
+    max-width: 960px;
+}
+
+.form {
+  margin: auto;
+  max-width: 330px;
+  padding: 15px;
+  width: 100%;
+}
+
+.form .form-control {
+  box-sizing: border-box;
+  font-size: 16px;
+  height: auto;
+  padding: 10px;
+  position: relative;
+}
+
+.form .form-control:focus {
+  z-index: 2;
+}
+
+.form img {
+  display: flex;
+  margin: 0 auto;
+}
+
+.form input[type="email"] {
+  background-color: #01504e;
+  color: #ffffff;
+  margin-bottom: -1px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0
+}
+
+.form input[type="password"] {
+  background-color: #01504e;
+  color: #ffffff;
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0
+}
+
+
+
+
+.hide {
+  display: none;
+}
+.modal-content {
+  background-color: #121212;
+  border: solid 2px #01837F;
+}
+.panel {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+#main-signin {
+  background-color: #01837F;
+  color: white;
+  display: flex;
+  display: -ms-flexbox;
+  height: 100%;
+  ms-flex-align: center;
+  padding: 10px 10px 10px 10px;
+  position: fixed;
+  width: 100%;
+  z-index: 10000;
+}
+
+#main-signup {
+  background-color: #01837F;
+  color: white;
+  display: -ms-flexbox;
+  height: 100%;
+  ms-flex-align: center;
+  padding: 10px 10px 10px 10px;
+  position: fixed;
+  width: 100%;
+  z-index: 10000;
+}
+
+
+.profile {
+  height: auto;
+  width: 100%;
+}
+
+.profile-avatar {
+  border: solid 2px #01837F;
+  border-radius: 50%;
+  height: 96px;
+  margin: 0 auto;
+  width: 96px;
+}
+
+.profile-username {
+  margin-top: 5px;
+}
+
+.profile-email {
+  font-weight: bold;
+  margin: 0 auto;
+  margin-right: 0.1rem;
+}
+
+.profile-checked {
+  height: 16px;
+  margin: 0 auto;
+  width: 16px;
+}
