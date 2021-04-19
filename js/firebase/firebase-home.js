@@ -31,7 +31,7 @@ firebase.auth().onAuthStateChanged(function (user) {
 		var m_avatar = document.getElementById('modal_display_avatar');
 		var m_checked = document.getElementById('modal_display_checked');
 		
-		if (photoURL === null || displayName === null) {
+		if (photoURL === null) {
 			avatar.src = "../assets/icons/user_avatar.png";
 			m_avatar.src = "../assets/icons/user_avatar.png";
 		} else {
@@ -39,6 +39,7 @@ firebase.auth().onAuthStateChanged(function (user) {
 			m_avatar.src = photoURL;
 		}
 		if (displayName === null) {
+			$("#modal_update_profile").modal("show");
 			name.innerText = "Unknow";
 			m_name.innerText = "Unknow";
 		}
@@ -66,5 +67,20 @@ $("#button_signout").click(function () {
 		window.location.reload();
 	}).catch(function (error) {
 		// An error happened.
+	});
+});
+
+$("#button_update_name").click(function () {
+	var photo =  document.getElementById('input_photo').value;
+	var name = document.getElementById('input_username').value;
+	var user = firebase.auth().currentUser;
+	
+	user.updateProfile({
+		displayName: username
+		// photoURL: "https://example.com/jane-q-user/profile.jpg"
+		}).then(function() {
+			window.location.reload();
+		}).catch(function(error) {
+			// An error happened.
 	});
 });

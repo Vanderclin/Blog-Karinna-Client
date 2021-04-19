@@ -39,7 +39,7 @@
 		  <div class="modal-body">
 			<center class="profile">
 			  <img class="profile-avatar" id="modal_display_avatar" src="../assets/icons/user_avatar.png">
-			  <h3 class="profile-username" id="modal_display_name">Username</h3>
+			  <h3 class="profile-username" id="modal_display_name"></h3>
 			  <div class="justify-content-center d-inline-flex">
 				<h6 class="profile-email" id="modal_display_email">useremail@example.com</h6>
 				<img class="profile-checked" id="modal_display_checked" src="../assets/icons/user_error.png">
@@ -49,7 +49,31 @@
 		</div>
 	  </div>
 	</div>
-
+	
+	<!-- Modal Update Profile -->
+	<div class="modal fade" id="modal_update_profile" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	  <div class="modal-dialog modal-dialog-centered modal-sm px-3">
+		<div class="modal-content">
+		  <div class="modal-body">
+			<div class="d-flex">
+			  <div class="image-avatar mx-auto">
+				<div class="image-avatar-upload">
+				  <label class="mx-auto" for="avatar">
+					<img id="avatar_view" src="../assets/icons/user_avatar.png" />
+				  </label>
+				  <input class="item-img" id="avatar" type="file" accept="image/*"/>
+				</div>
+			  </div>
+			</div>
+			<div class="input-group mt-3 mb-3">
+			  <input type="text" class="form-control" placeholder="Nome do usuário" aria-label="E-mail" id="avatar-name">
+			</div>
+			<button class="btn btn-outline-light w-100" onclick="updateProfile()">Atualizar</button>
+		  </div>
+		</div>
+	  </div>
+	</div>
+	
 	<script src="../js/vendor/jquery-3.5.1.slim.min.js"></script>
     <script src="../js/bootstrap.js"></script>
 	<script src="../js/chart.js"></script>
