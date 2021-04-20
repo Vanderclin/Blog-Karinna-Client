@@ -1,30 +1,22 @@
 var firebaseConfig = {
-	apiKey: "AIzaSyA0xOmYC-T8rrcyRgf3MabB0BgRDOuDACg",
-	authDomain: "megalibrary-5cafb.firebaseapp.com",
-	databaseURL: "https://megalibrary-5cafb.firebaseio.com",
-	projectId: "megalibrary-5cafb",
-	storageBucket: "megalibrary-5cafb.appspot.com",
-	messagingSenderId: "86739228796",
-	appId: "1:86739228796:web:e70b4a83f163d4135151f9",
-	measurementId: "G-K07Z821C5T"
+    apiKey: "AIzaSyB3sWlDsu8vk-QJaF9uHa0_X04_MG1AzJA",
+    authDomain: "karinna-lima.firebaseapp.com",
+    databaseURL: "https://karinna-lima-default-rtdb.firebaseio.com",
+    projectId: "karinna-lima",
+    storageBucket: "karinna-lima.appspot.com",
+    messagingSenderId: "139462105718",
+    appId: "1:139462105718:web:d8976410fe1424f8f75d57",
+    measurementId: "G-TC2QZM9B3Q"
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 firebase.analytics();
 
-
 firebase.auth().onAuthStateChanged(function (user) {
 	if (user) {
-		var displayName = user.displayName;
-		var email = user.email;
-		var emailVerified = user.emailVerified;
-		var photoURL = user.photoURL;
-		var isAnonymous = user.isAnonymous;
-		var uid = user.uid;
-		var providerData = user.providerData;
 		window.location.replace("/home/");
 	} else {
-		// window.location.replace('/');
+
 	}
 });
 
@@ -54,4 +46,33 @@ function signIn() {
 		document.getElementById('button-sign-in').disabled = false;
 	});
 	document.getElementById('button-sign-in').disabled = true;
+}
+
+
+function signUp() {
+
+	var email = document.getElementById('email-signup').value;
+	var password = document.getElementById('password-signup').value;
+	if (email.length < 4) {
+		alert('Por favor insira um endereço de e-mail.');
+		return;
+	}
+	if (password.length < 4) {
+		alert('Por favor insira uma senha.');
+		return;
+	}
+	// Create user with email and pass.
+	firebase.auth().createUserWithEmailAndPassword(email, password).catch(function (error) {
+		// Handle Errors here.
+		var errorCode = error.code;
+		var errorMessage = error.message;
+		if (errorCode == 'auth/weak-password') {
+			alert('A senha é muito fraca.');
+		} else {
+			alert(errorMessage);
+			
+		}
+		document.getElementById('button-sign-up').disabled = false;
+	});
+	document.getElementById('button-sign-up').disabled = true;
 }
